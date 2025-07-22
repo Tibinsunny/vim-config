@@ -35,3 +35,5 @@ vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buff
 vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "Q", [["_dd]], { desc = "Delete line without yanking" })
+
+vim.keymap.set("v", "Q", [["_dd]], { desc = "Delete line without yanking" })
