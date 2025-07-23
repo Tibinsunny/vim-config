@@ -1,4 +1,10 @@
 -- ~/.config/nvim/init.lua
+
+-- Set leader key BEFORE loading plugins
+vim.g.mapleader = ' '  -- Set space as leader key
+vim.g.maplocalleader = ' '
+
+-- Setup lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({"git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable",
@@ -6,20 +12,17 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Basic options BEFORE loading plugins
 vim.opt.clipboard = "unnamedplus"
-require("lazy").setup({require("theme"), require("plugin.neo-tree"), require("plugin.telescope"),
-                       require("plugin.treesitter"), require("plugin.bufferline"), require("plugin.lsp"), require("plugin.format_lint"),require("plugin.autocomplete"),require("plugin.autopair")})
-
--- === Apply the colorscheme and set options AFTER plugins are loaded ===
-
--- Enable true colors for modern themes
 vim.opt.termguicolors = true
 
--- Set the colorscheme
--- This should happen after the plugin manager has loaded the theme.
--- vim.cmd("colorscheme nightfox")
+-- Load plugins
+require("lazy").setup({require("theme"), require("plugin.neo-tree"), require("plugin.telescope"),
+                       require("plugin.treesitter"), require("plugin.bufferline"), require("plugin.lsp"), require("plugin.format_lint"),require("plugin.autocomplete"),require("plugin.autopair"), require("plugin.dap")})
 
--- Optional: Basic options (you'll expand on this in user/options.lua later)
+-- === Apply options AFTER plugins are loaded ===
+
+-- Optional: Basic options
 vim.opt.nu = true -- Line numbers
 vim.opt.relativenumber = true -- Relative line numbers
 vim.opt.tabstop = 2
@@ -30,11 +33,13 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldenable = false -- don’t auto-fold on file open
+vim.opt.foldenable = false -- don't auto-fold on file open
 vim.opt.foldlevel = 99 -- show all folds by default
+
+-- Load keymaps AFTER plugins to avoid conflicts
 require("keymaps")
 
--- Add yank Color---
+-- Add yank highlight
 vim.api.nvim_create_autocmd("TextYankPost", {
     pattern = "*",
     callback = function()

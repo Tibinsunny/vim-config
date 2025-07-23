@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 --- Key Maps for Neo-Tree ---------------
 -- Toggle Neo-tree and return to previous buffer if already focused--
 vim.keymap.set("n", "<leader>t", ":Neotree toggle<CR>", { desc = "Toggle Neo-tree" })
