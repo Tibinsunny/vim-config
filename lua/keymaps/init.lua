@@ -38,3 +38,14 @@ vim.keymap.set("n", "Q", [["_dd]], { desc = "Delete line without yanking" })
 vim.keymap.set("v", "Q", [["_dd]], { desc = "Delete line without yanking" })
 
 vim.keymap.set("n", "<leader><Tab>", "<cmd>tabnew<CR>", { desc = "Open new tab" })
+ vim.keymap.set("n", "<leader>dv", "<cmd>DiffviewOpen<CR>", { desc = "Open Diffview" })
+vim.keymap.set("n", "<leader>dc", "<cmd>DiffviewClose<CR>", { desc = "Close Diffview" })
+
+-- Normal mode: map L to go to end of line ($)
+vim.keymap.set('n', 'L', '$', { noremap = true, silent = true })
+
+-- Visual mode: map L to extend selection to end of line
+vim.keymap.set('v', 'L', '$', { noremap = true, silent = true })
+
+vim.keymap.set('v', 'H', '0', { noremap = true, silent = true })
+vim.keymap.set('n', 'H', '0', { noremap = true, silent = true })

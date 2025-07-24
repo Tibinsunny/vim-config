@@ -18,7 +18,7 @@ vim.opt.termguicolors = true
 
 -- Load plugins
 require("lazy").setup({require("theme"), require("plugin.neo-tree"), require("plugin.telescope"),
-                       require("plugin.treesitter"), require("plugin.bufferline"), require("plugin.lsp"), require("plugin.format_lint"),require("plugin.autocomplete"),require("plugin.autopair"), require("plugin.dap")})
+                       require("plugin.treesitter"), require("plugin.bufferline"), require("plugin.lsp"), require("plugin.format_lint"),require("plugin.autocomplete"),require("plugin.autopair"), require("plugin.dap"),require("plugin.git-conflict"),require("plugin.diffview")})
 
 -- === Apply options AFTER plugins are loaded ===
 
