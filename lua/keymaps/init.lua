@@ -36,3 +36,5 @@ vim.keymap.set("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "Q", [["_dd]], { desc = "Delete line without yanking" })
 
 vim.keymap.set("v", "Q", [["_dd]], { desc = "Delete line without yanking" })
+
+vim.keymap.set("n", "<leader><Tab>", "<cmd>tabnew<CR>", { desc = "Open new tab" })
