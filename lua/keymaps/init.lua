@@ -1,5 +1,25 @@
 --- Key Maps for Neo-Tree ---------------
 -- Toggle Neo-tree and return to previous buffer if already focused--
+
+
+-- Define keymap function and options first
+local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
+
+-- Replace arrow keys with a message
+for _, key in pairs({
+  { '<Up>', "Use 'k'" },
+  { '<Down>', "Use 'j'" },
+  { '<Left>', "Use 'h'" },
+  { '<Right>', "Use 'l'" },
+}) do
+  for _, mode in ipairs({ 'n', 'i', 'v' }) do
+    map(mode, key[1], function()
+      vim.notify(key[2] .. ' instead of arrow keys!')
+    end, opts)
+  end
+end
+
 vim.keymap.set("n", "<leader>t", ":Neotree toggle<CR>", { desc = "Toggle Neo-tree" })
 vim.keymap.set("n", "<leader>e", function()
   local neotree_win = nil
@@ -49,3 +69,12 @@ vim.keymap.set('v', 'L', '$', { noremap = true, silent = true })
 
 vim.keymap.set('v', 'H', '0', { noremap = true, silent = true })
 vim.keymap.set('n', 'H', '0', { noremap = true, silent = true })
+
+-- Remap P to paste below the current line
+vim.keymap.set("n", "P", "o<Esc>p", { noremap = true, silent = true, desc = "Paste on next line" })
+
+-- Visual mode: Move selection down with Ctrl + j
+vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down", silent = true })
+
+-- Visual mode: Move selection up with Ctrl + k
+vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", silent = true })

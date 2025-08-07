@@ -101,8 +101,7 @@ dap.configurations.python = {
         elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
           return cwd .. '/.venv/bin/python'
         elseif vim.fn.executable(cwd .. '/venv/bin/python3') == 1 then
-          return cwd .. '/venv/bin/python3'
-        elseif vim.fn.executable(cwd .. '/.venv/bin/python3') == 1 then
+          return cwd .. '/venv/bin/python3' elseif vim.fn.executable(cwd .. '/.venv/bin/python3') == 1 then
           return cwd .. '/.venv/bin/python3'
         elseif vim.fn.executable('python3') == 1 then
           return 'python3'
@@ -257,7 +256,7 @@ vim.keymap.set('n', '<leader>B', function()
 end, { desc = 'Debug: Set Conditional Breakpoint' })
 
 -- Set breakpoint icons
-vim.fn.sign_define('DapBreakpoint', { text='🔴', texthl='DapBreakpoint', linehl='', numhl=''})
+vim.fn.sign_define('DapBreakpoint', { text='🕷️', texthl='DapBreakpoint', linehl='', numhl=''})
 vim.fn.sign_define('DapBreakpointCondition', { text='🟡', texthl='DapBreakpointCondition', linehl='', numhl=''})
 vim.fn.sign_define('DapLogPoint', { text='📝', texthl='DapLogPoint', linehl='', numhl=''})
 vim.fn.sign_define('DapStopped', { text='➡️', texthl='DapStopped', linehl='debugPC', numhl=''})
