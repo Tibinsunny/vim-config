@@ -1,5 +1,5 @@
 local dap = require('dap')
-
+dap.set_log_level("DEBUG")
 -- Node.js debugger adapter
 dap.adapters.node2 = {
   type = 'executable',
@@ -62,14 +62,25 @@ dap.configurations.javascript = {
     console = 'integratedTerminal',
   },
   {
-  name = 'Attach to Node.js',
+  name = 'Attach to Node.js without DAPUI',
   type = 'node2',
   request = 'attach',
   port = 9229,
   address = '127.0.0.1',
   restart = true,
   cwd = vim.fn.getcwd(),
-},
+  openUI=false,
+}  
+  ,{
+  name = 'Attach to Node.js with UI',
+  type = 'node2',
+  request = 'attach',
+  port = 9229,
+  address = '127.0.0.1',
+  restart = true,
+  cwd = vim.fn.getcwd(),
+  openUI=true,
+ },
   {
     name = 'Launch Node.js with arguments',
     type = 'node2',
