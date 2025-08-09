@@ -83,18 +83,26 @@ return {
         },
       })
 
-      -- Automatically open/close DAP UI
-      dap.listeners.after.event_initialized['dapui_config'] = function()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated['dapui_config'] = function()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited['dapui_config'] = function()
-        dapui.close()
-      end
 
-      -- Key mappings for DAP UI
+ 
+dap.listeners.after.event_initialized['dapui_config'] = function(session)
+  if session.config.openUI == false then
+    -- Don't open UI
+    return
+  end
+  -- Default: open the UI
+  dapui.open()
+end
+
+dap.listeners.before.event_terminated['dapui_config'] = function()
+  dapui.close()
+end
+
+dap.listeners.before.event_exited['dapui_config'] = function()
+  dapui.close()
+end
+ 
+     -- Key mappings for DAP UI
       vim.keymap.set('n', '<leader>du', dapui.toggle, { desc = 'Debug: Toggle UI' })
       vim.keymap.set('n', '<leader>de', dapui.eval, { desc = 'Debug: Evaluate Expression' })
       vim.keymap.set('v', '<leader>de', dapui.eval, { desc = 'Debug: Evaluate Selection' })
