@@ -11,12 +11,13 @@ return {
       vim.g.blamer_show_in_insert_modes = 0
       vim.g.blamer_show_in_visual_modes = 0
       vim.g.blamer_prefix = ' > '
-      vim.g.blamer_template = '<committer> • <summary>'
+      vim.g.blamer_template = '<committer> <committer-mail> '
       vim.g.blamer_date_format = '%d/%m/%y'
       vim.g.blamer_relative_time = 1
 
       -- custom highlight (optional)
-      vim.cmd [[highlight Blamer guifg=lightgrey]]
+      --
+      vim.cmd [[highlight Blamer guifg=#808080 gui=italic blend=30]]
     end
   }
 }
