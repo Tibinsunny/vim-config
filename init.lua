@@ -3,7 +3,6 @@
 -- Set leader key BEFORE loading plugins
 vim.g.mapleader = ' '  -- Set space as leader key
 vim.g.maplocalleader = ' '
-
 -- Setup lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -33,7 +32,7 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldenable = false -- don't auto-fold on file open
+vim.opt.foldenable = true-- don't auto-fold on file open
 vim.opt.foldlevel = 99 -- show all folds by default
 
 -- Load keymaps AFTER plugins to avoid conflicts
