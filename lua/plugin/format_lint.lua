@@ -13,6 +13,8 @@ return {
           json = { "prettier" },
           yaml = { "prettier" },
           markdown = { "prettier" },
+          typescriptreact = { "prettier" },
+          javascriptreact = { "prettier" },
         },
       })
 
