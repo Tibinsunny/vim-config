@@ -23,15 +23,14 @@ return {
         "query",
       },
       highlight = {
-        enable = true,              -- enable syntax highlighting
+        enable = true, -- enable syntax highlighting
         additional_vim_regex_highlighting = false,
       },
       indent = {
-        enable = true,              -- better indentation
+        enable = true, -- better indentation
       },
-      autotag = {
-        enable = true,              -- auto-close tags (needs nvim-ts-autotag)
-      },
+      -- The 'autotag' section has been removed from here.
+      -- It is now handled by the separate 'nvim-ts-autotag' plugin file.
     })
   end,
 }
