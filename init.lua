@@ -40,7 +40,9 @@ require("lazy").setup({
     require("plugin.lualine"),
     require("plugin.blamer"),
     require("plugin.autotag"),
-    require("plugin.indent-object")
+    require("plugin.indent-object"),
+
+    require("plugin.grug-far")
 })
 
 -- === Apply options AFTER plugins are loaded ===

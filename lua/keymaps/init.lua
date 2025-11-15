@@ -78,3 +78,7 @@ vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down",
 
 -- Visual mode: Move selection up with Ctrl + k
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", silent = true })
+
+-- Keymap to gurg-far 
+
+vim.keymap.set("n", "<leader>fr", "<cmd>GrugFar<cr>", { desc = "Find & Replace (GrugFAR)" })
