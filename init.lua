@@ -39,7 +39,8 @@ require("lazy").setup({
     require("plugin.diffview"),
     require("plugin.lualine"),
     require("plugin.blamer"),
-    require("plugin.autotag")
+    require("plugin.autotag"),
+    require("plugin.indent-object")
 })
 
 -- === Apply options AFTER plugins are loaded ===
