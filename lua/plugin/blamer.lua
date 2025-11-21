@@ -3,7 +3,7 @@ return {
   "APZelos/blamer.nvim",
   init = function()
     -- 👇 set before plugin loads
-    vim.g.blamer_enabled = 1
+    vim.g.blamer_enabled = 0
     vim.g.blamer_prefix = '  '
     vim.g.blamer_template = '<author>, <author-time> • <summary> • <commit-short>'
     vim.g.blamer_date_format = '%d/%m/%y'

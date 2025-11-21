@@ -46,8 +46,8 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' 
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
 --Keymaps for Treesitter --- 
-vim.keymap.set("n", "<C-h>", "zc", { desc = "Fold (close)" })  -- collapse
-vim.keymap.set("n", "<C-l>", "zo", { desc = "Unfold (open)" }) -- expand
+-- vim.keymap.set("n", "<C-h>", "zc", { desc = "Fold (close)" })  -- collapse
+--vim.keymap.set("n", "<C-l>", "zo", { desc = "Unfold (open)" }) -- expand
 
 -- Bufferline remaps---
 vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
