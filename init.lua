@@ -22,7 +22,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Basic options BEFORE loading plugins
 vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
-
 -- Load plugins
 require("lazy").setup({
     require("theme"),
@@ -41,6 +40,7 @@ require("lazy").setup({
     require("plugin.blamer"),
     require("plugin.autotag"),
     require("plugin.indent-object"),
+    require("plugin.neocodeium"),
 
     require("plugin.grug-far")
 })
@@ -49,7 +49,7 @@ require("lazy").setup({
 
 -- Basic editor options
 vim.opt.nu = true                -- Line numbers
-vim.opt.relativenumber = true    -- Relative line numbers
+-- vim.opt.relativenumber = true    -- Relative line numbers
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true         -- Use spaces instead of tabs
