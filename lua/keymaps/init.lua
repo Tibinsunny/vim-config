@@ -21,22 +21,22 @@ for _, key in pairs({
 end
 
 vim.keymap.set("n", "<leader>t", ":Neotree toggle<CR>", { desc = "Toggle Neo-tree" })
-vim.keymap.set("n", "<leader>e", function()
-  local neotree_win = nil
-  for _, win in ipairs(vim.api.nvim_list_wins()) do
-    local bufname = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(win))
-    if bufname:match("neo%-tree") then
-      neotree_win = win
-      break
-    end
-  end
-
-  if neotree_win and vim.api.nvim_get_current_win() == neotree_win then
-    vim.cmd("wincmd p") -- Go to previous window
-  else
-    vim.cmd("Neotree focus")
-  end
-end, { desc = "Toggle focus to Neo-tree" })
+---vim.keymap.set("n", "<leader>e", function()
+  ---local neotree_win = nil
+  ---for _, win in ipairs(vim.api.nvim_list_wins()) do
+    ---local bufname = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(win))
+    ---if bufname:match("neo%-tree") then
+      ---neotree_win = win
+      ---break
+    ---end
+  ---end
+---
+  ---if neotree_win and vim.api.nvim_get_current_win() == neotree_win then
+    ---vim.cmd("wincmd p") -- Go to previous window
+  ---else
+    ---vim.cmd("Neotree focus")
+  ---end
+--- end, { desc = "Toggle focus to Neo-tree" })
 
 -- KeyMaps for Telescope --- 
 local builtin = require('telescope.builtin')

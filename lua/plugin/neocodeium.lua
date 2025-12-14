@@ -12,14 +12,13 @@ return {
       neocodeium.setup()
 
       -- Accept suggestion with Shift-Tab
-      vim.keymap.set("i", "<S-Tab>", function()
-        neocodeium.accept()
-      end, { silent = true })
+      
+vim.keymap.set("i", "<C-Space>", function()
+  require("neocodeium").accept()
+end, { silent = true })
     end,
   },
 }
-
-
 
 
 
