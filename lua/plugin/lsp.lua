@@ -6,7 +6,7 @@ return {
     }, {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = {"pyright", "ts_ls", "gopls", "html", "cssls", "jsonls", "yamlls"},
+            ensure_installed = {"pyright", "ts_ls", "gopls", "html", "cssls", "jsonls", "yamlls", "clangd"},
             automatic_installation = true,
             automatic_setup = true 
         }
@@ -21,6 +21,7 @@ return {
         lspconfig.cssls.setup({})
         lspconfig.jsonls.setup({})
         lspconfig.yamlls.setup({})
+        lspconfig.clangd.setup({})
 
         local map = vim.keymap.set
         local opts = {
