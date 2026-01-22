@@ -40,7 +40,7 @@ require("lazy").setup({
     require("plugin.blamer"),
     require("plugin.autotag"),
     require("plugin.indent-object"),
-    require("plugin.neocodeium"),
+  -- require("plugin.neocodeium"),
 
     require("plugin.grug-far")
 })
