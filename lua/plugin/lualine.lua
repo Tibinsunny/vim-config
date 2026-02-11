@@ -1,9 +1,13 @@
 return {
   'nvim-lualine/lualine.nvim',
-  dependencies = { 'mfussenegger/nvim-dap' }, -- Ensure nvim-dap is a dependency
+  dependencies = { 'mfussenegger/nvim-dap' },
   opts = {
     sections = {
       lualine_c = {
+        {
+          'filename',
+          path = 1, -- 👈 THIS shows full path
+        },
         function()
           local dap = require('dap')
           if dap.session() then
@@ -13,7 +17,6 @@ return {
           end
         end,
       },
-      -- add your other sections here
     },
   },
 }
