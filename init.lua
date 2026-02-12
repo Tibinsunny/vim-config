@@ -48,8 +48,8 @@ require("lazy").setup({
 -- === Apply options AFTER plugins are loaded ===
 
 -- Basic editor options
-vim.opt.nu = true                -- Line numbers
--- vim.opt.relativenumber = true    -- Relative line numbers
+vim.opt.number = true           -- keep absolute number for current line
+vim.opt.relativenumber = true   -- show relative numbers
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true         -- Use spaces instead of tabs
