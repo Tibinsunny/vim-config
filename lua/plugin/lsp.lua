@@ -12,16 +12,26 @@ return {
         }
     }},
     config = function()
-        local lspconfig = require("lspconfig")
+          vim.lsp.config("pyright", {})
+          vim.lsp.config("ts_ls", {})
+          vim.lsp.config("gopls", {})
+          vim.lsp.config("html", {})
+          vim.lsp.config("cssls", {})
+          vim.lsp.config("jsonls", {})
+          vim.lsp.config("yamlls", {})
+          vim.lsp.config("clangd", {})
 
-        lspconfig.pyright.setup({})
-        lspconfig.ts_ls.setup({})
-        lspconfig.gopls.setup({})
-        lspconfig.html.setup({})
-        lspconfig.cssls.setup({})
-        lspconfig.jsonls.setup({})
-        lspconfig.yamlls.setup({})
-        lspconfig.clangd.setup({})
+          -- Enable them
+          vim.lsp.enable({
+            "pyright",
+            "ts_ls",
+            "gopls",
+            "html",
+            "cssls",
+            "jsonls",
+            "yamlls",
+            "clangd",
+          })
 
         local map = vim.keymap.set
         local opts = {

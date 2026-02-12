@@ -63,16 +63,25 @@ return {
       })
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      lspconfig.emmet_ls.setup({
+      -- Emmet
+      vim.lsp.config("emmet_ls", {
         capabilities = capabilities,
-        filetypes = { "html", "css", "scss", "sass", "less", "javascriptreact", "typescriptreact" },
-      })
-      lspconfig.ts_ls.setup({
-        capabilities = capabilities,
-        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+        filetypes = {
+          "html", "css", "scss", "sass", "less",
+          "javascriptreact", "typescriptreact",
+        },
       })
 
-      for _, lsp in ipairs({
+      -- TypeScript (⚠️ use tsserver, not ts_ls)
+      vim.lsp.config("tsserver", {
+        capabilities = capabilities,
+        filetypes = {
+          "javascript", "javascriptreact",
+          "typescript", "typescriptreact",
+        },
+      })
+
+local servers = {
         "pyright",
         "gopls",
         "html",
@@ -81,11 +90,18 @@ return {
         "yamlls",
         "bashls",
         "marksman",
-      }) do
-        lspconfig[lsp].setup({
+      }
+      for _, server in ipairs(servers) do
+        vim.lsp.config(server, {
           capabilities = capabilities,
         })
       end
+
+      vim.lsp.enable({
+        "emmet_ls",
+        "tsserver",
+        unpack(servers),
+      })
     end,
   },
 }
