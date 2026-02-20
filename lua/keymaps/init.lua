@@ -67,8 +67,6 @@ vim.keymap.set('v', 'L', '$', { noremap = true, silent = true })
 vim.keymap.set('v', 'H', '0', { noremap = true, silent = true })
 vim.keymap.set('n', 'H', '0', { noremap = true, silent = true })
 
--- Remap P to paste below the current line
-vim.keymap.set("n", "P", "o<Esc>p", { noremap = true, silent = true, desc = "Paste on next line" })
 
 -- Visual mode: Move selection down with Ctrl + j
 vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down", silent = true })
@@ -77,5 +75,18 @@ vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down",
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", silent = true })
 
 -- Keymap to gurg-far 
-
 vim.keymap.set("n", "<leader>fr", "<cmd>GrugFar<cr>", { desc = "Find & Replace (GrugFAR)" })
+-- Vim Keybinding for terminal mode
+-- Map Ctrl-w in Terminal mode to escape and then act as Ctrl-w
+vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], {noremap = true})
+
+-- Specifically for cycling buffers/windows with 'w'
+-- This allows: Ctrl-w (escapes) -> w (moves to next window)
+vim.keymap.set('t', '<C-w>w', [[<C-\><C-n><C-w>w]], {noremap = true})
+
+-- Support for the arrow keys you asked for earlier
+vim.keymap.set('t', '<C-w><Left>', [[<C-\><C-n><C-w>h]], {noremap = true})
+vim.keymap.set('t', '<C-w><Right>', [[<C-\><C-n><C-w>l]], {noremap = true})
+vim.keymap.set('t', '<C-w><Up>', [[<C-\><C-n><C-w>k]], {noremap = true})
+vim.keymap.set('t', '<C-w><Down>', [[<C-\><C-n><C-w>j]], {noremap = true})
+
