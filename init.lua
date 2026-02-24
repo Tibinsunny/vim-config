@@ -28,21 +28,21 @@ require("lazy").setup({
     require("plugin.neo-tree"),
     require("plugin.telescope"),
     require("plugin.treesitter"),
-    require("plugin.bufferline"),
+ --   require("plugin.bufferline"),
     require("plugin.lsp"),
     require("plugin.format_lint"),
     require("plugin.autocomplete"),
     require("plugin.autopair"),
     require("plugin.dap"),
     require("plugin.git-conflict"),
-    require("plugin.diffview"),
+  require("plugin.diffview"),
     require("plugin.lualine"),
     require("plugin.blamer"),
     require("plugin.autotag"),
     require("plugin.indent-object"),
   -- require("plugin.neocodeium"),
 
-    require("plugin.grug-far")
+    require("plugin.grug-far"),
 })
 
 -- === Apply options AFTER plugins are loaded ===
