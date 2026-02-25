@@ -90,4 +90,3 @@ vim.keymap.set('t', '<C-w><Right>', [[<C-\><C-n><C-w>l]], {noremap = true})
 vim.keymap.set('t', '<C-w><Up>', [[<C-\><C-n><C-w>k]], {noremap = true})
 vim.keymap.set('t', '<C-w><Down>', [[<C-\><C-n><C-w>j]], {noremap = true})
 
-vim.keymap.set("n", "<C-b>", "<cmd>Telescope buffers<cr>", { desc = "Open Buffers" })
