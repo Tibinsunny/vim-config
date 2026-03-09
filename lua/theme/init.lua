@@ -16,7 +16,7 @@ return {
       },
     })
 
+    vim.cmd("colorscheme terafox")
     -- Set colorscheme to carbonfox
-    vim.cmd("colorscheme carbonfox")
   end,
 }

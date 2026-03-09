@@ -25,7 +25,7 @@ vim.opt.termguicolors = true
 -- Load plugins
 require("lazy").setup({
     require("theme"),
-    require("plugin.neo-tree"),
+ --   require("plugin.neo-tree"),
     require("plugin.telescope"),
     require("plugin.treesitter"),
  --   require("plugin.bufferline"),
@@ -63,7 +63,9 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = true        -- Don't auto-fold on file open
 vim.opt.foldlevel = 99           -- Show all folds by default
-
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.writebackup = false
 -- Load keymaps AFTER plugins to avoid conflicts
 require("keymaps")
 
