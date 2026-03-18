@@ -20,24 +20,6 @@ for _, key in pairs({
   end
 end
 
-vim.keymap.set("n", "<leader>t", ":Neotree toggle<CR>", { desc = "Toggle Neo-tree" })
----vim.keymap.set("n", "<leader>e", function()
-  ---local neotree_win = nil
-  ---for _, win in ipairs(vim.api.nvim_list_wins()) do
-    ---local bufname = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(win))
-    ---if bufname:match("neo%-tree") then
-      ---neotree_win = win
-      ---break
-    ---end
-  ---end
----
-  ---if neotree_win and vim.api.nvim_get_current_win() == neotree_win then
-    ---vim.cmd("wincmd p") -- Go to previous window
-  ---else
-    ---vim.cmd("Neotree focus")
-  ---end
---- end, { desc = "Toggle focus to Neo-tree" })
-
 -- KeyMaps for Telescope --- 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
@@ -90,3 +72,22 @@ vim.keymap.set('t', '<C-w><Right>', [[<C-\><C-n><C-w>l]], {noremap = true})
 vim.keymap.set('t', '<C-w><Up>', [[<C-\><C-n><C-w>k]], {noremap = true})
 vim.keymap.set('t', '<C-w><Down>', [[<C-\><C-n><C-w>j]], {noremap = true})
 
+-- Helper function to Toggle Oil
+local toggle_oil = function()
+  if vim.bo.filetype == "oil" then
+    require("oil").close()
+  else
+    require("oil").open()
+  end
+end
+
+-- 1. Map Leader + T to toggle Oil
+-- Ensure your leader key is defined before this line (usually vim.g.mapleader = " ")
+vim.keymap.set("n", "<leader>t", toggle_oil, { desc = "Toggle Oil File Explorer" })
+
+-- 2. Create the :Ex command to toggle Oil
+-- 'force = true' allows us to overwrite the built-in Netrw :Ex command
+vim.api.nvim_create_user_command("Ex", toggle_oil, { 
+  force = true, 
+  desc = "Toggle Oil File Explorer" 
+})

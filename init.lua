@@ -25,7 +25,6 @@ vim.opt.termguicolors = true
 -- Load plugins
 require("lazy").setup({
     require("theme"),
- --   require("plugin.neo-tree"),
     require("plugin.telescope"),
     require("plugin.treesitter"),
  --   require("plugin.bufferline"),
@@ -41,6 +40,7 @@ require("lazy").setup({
     require("plugin.autotag"),
     require("plugin.indent-object"),
     require("plugin.harpoon"),
+    require("plugin.oil"),
   -- require("plugin.neocodeium"),
 
     require("plugin.grug-far"),
