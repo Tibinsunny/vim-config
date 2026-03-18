@@ -42,5 +42,9 @@ return {
         map("n", "K", vim.lsp.buf.hover, opts)
         map("n", "gd", vim.lsp.buf.definition, opts)
         map("n", "gr", vim.lsp.buf.references, opts)
-    end
+        map("n", "gD", function()
+          vim.cmd("vsplit")
+          vim.lsp.buf.definition()
+        end, opts)
+  end
 }
