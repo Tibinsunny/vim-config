@@ -51,7 +51,7 @@ require("lazy").setup({
 -- Basic editor options
 vim.opt.number = true           -- keep absolute number for current line
 vim.opt.relativenumber = true   -- show relative numbers
-vim.opt.splitright = true   -- show relative numbers
+vim.opt.splitright = true  
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true         -- Use spaces instead of tabs
