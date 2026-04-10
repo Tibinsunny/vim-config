@@ -23,7 +23,7 @@ require("lazy").setup({
     require("theme"),
     require("plugin.telescope"),
     require("plugin.treesitter"),
- --   require("plugin.bufferline"),
+ -- require("plugin.bufferline"),
     require("plugin.lsp"),
     require("plugin.format_lint"),
     require("plugin.autocomplete"),
@@ -48,6 +48,7 @@ require("lazy").setup({
 -- Basic editor options
 vim.opt.number = true           -- keep absolute number for current line
 vim.opt.relativenumber = true   -- show relative numbers
+vim.opt.splitright = true  
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true         -- Use spaces instead of tabs

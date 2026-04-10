@@ -67,10 +67,10 @@ vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], {noremap = true})
 vim.keymap.set('t', '<C-w>w', [[<C-\><C-n><C-w>w]], {noremap = true})
 
 -- Support for the arrow keys you asked for earlier
-vim.keymap.set('t', '<C-w><Left>', [[<C-\><C-n><C-w>h]], {noremap = true})
-vim.keymap.set('t', '<C-w><Right>', [[<C-\><C-n><C-w>l]], {noremap = true})
-vim.keymap.set('t', '<C-w><Up>', [[<C-\><C-n><C-w>k]], {noremap = true})
-vim.keymap.set('t', '<C-w><Down>', [[<C-\><C-n><C-w>j]], {noremap = true})
+--vim.keymap.set('t', '<C-w><Left>', [[<C-\><C-n><C-w>h]], {noremap = true})
+-- vim.keymap.set('t', '<C-w><Right>', [[<C-\><C-n><C-w>l]], {noremap = true})
+-- vim.keymap.set('t', '<C-w><Up>', [[<C-\><C-n><C-w>k]], {noremap = true})
+-- vim.keymap.set('t', '<C-w><Down>', [[<C-\><C-n><C-w>j]], {noremap = true})
 
 -- Helper function to Toggle Oil
 local toggle_oil = function()
