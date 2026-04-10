@@ -1,7 +1,3 @@
-
--- ~/.config/nvim/init.lua
-
--- Set leader key BEFORE loading plugins
 vim.g.mapleader = ' '  -- Set space as leader key
 vim.g.maplocalleader = ' '
 
@@ -46,6 +42,7 @@ require("lazy").setup({
     require("plugin.grug-far"),
 })
 
+   require("plugin.floatbuffer")
 -- === Apply options AFTER plugins are loaded ===
 
 -- Basic editor options
