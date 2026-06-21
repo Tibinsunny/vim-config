@@ -16,7 +16,7 @@ return {
     },
     explorer = {
       width = 35,
-      flatten_dirs = true,
+      view_mode="tree"
     },
   },
   config = function(_, opts)
