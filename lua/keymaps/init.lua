@@ -6,7 +6,6 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
--- Replace arrow keys with a message
 for _, key in pairs({
   { '<Up>', "Use 'k'" },
   { '<Down>', "Use 'j'" },
@@ -15,8 +14,12 @@ for _, key in pairs({
 }) do
   for _, mode in ipairs({ 'n', 'i', 'v' }) do
     map(mode, key[1], function()
+      if vim.bo.filetype == "TelescopePrompt" then
+        return key[1]
+      end
+
       vim.notify(key[2] .. ' instead of arrow keys!')
-    end, opts)
+    end, vim.tbl_extend("force", opts, { expr = true }))
   end
 end
 
