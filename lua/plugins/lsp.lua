@@ -41,10 +41,20 @@ function M.setup()
       vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
       vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+      vim.keymap.set("n", "gD", function()
+          vim.cmd("vsplit")
+          vim.lsp.buf.definition()
+        end, { desc = "Definition in vertical split" })
     end,
   })
 end
 
+vim.diagnostic.config({
+  virtual_text = false,   -- inline messages after the line
+  underline = true,      -- the squiggle under the token
+  signs = true,          -- gutter icon
+  update_in_insert = false,
+})
 return {
   "neovim/nvim-lspconfig",
   config = function()

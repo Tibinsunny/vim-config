@@ -85,3 +85,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         })
     end
 })
+
+vim.keymap.set("n", "gl", vim.diagnostic.open_float)

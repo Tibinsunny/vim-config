@@ -28,4 +28,3 @@ require("plugins.oil")
 })
 require("keymaps")
 require("config")
-
