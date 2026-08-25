@@ -1,7 +1,6 @@
 -- Define keymap function and options first
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
-
 for _, key in pairs({
   { '<Up>', "Use 'k'" },
   { '<Down>', "Use 'j'" },
@@ -87,3 +86,4 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.keymap.set("n", "gl", vim.diagnostic.open_float)
+vim.opt.laststatus=3
