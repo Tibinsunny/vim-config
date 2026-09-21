@@ -9,8 +9,6 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 -- Folding
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = true        -- Don't auto-fold on file open
 vim.opt.foldlevel = 99           -- Show all folds by default
 vim.opt.swapfile = false

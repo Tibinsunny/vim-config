@@ -87,3 +87,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.keymap.set("n", "gl", vim.diagnostic.open_float)
 vim.opt.laststatus=3
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
