@@ -89,3 +89,8 @@ vim.keymap.set("n", "gl", vim.diagnostic.open_float)
 vim.opt.laststatus=3
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+vim.keymap.set('t', '<C-w>h', [[<C-\><C-n><C-w>h]])
+vim.keymap.set('t', '<C-w>j', [[<C-\><C-n><C-w>j]])
+vim.keymap.set('t', '<C-w>k', [[<C-\><C-n><C-w>k]])
+vim.keymap.set('t', '<C-w>l', [[<C-\><C-n><C-w>l]])
