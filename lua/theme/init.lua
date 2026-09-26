@@ -6,7 +6,7 @@ return {
     -- Optional: you can configure variants here
     require("nightfox").setup({
       options = {
-        transparent = true,
+        transparent = false,
         terminal_colors = true,
         styles = {
           comments = "italic",
@@ -16,7 +16,7 @@ return {
       },
     })
 
-    vim.cmd("colorscheme terafox")
+    vim.cmd("colorscheme carbonfox")
     -- Set colorscheme to carbonfox
   end,
 }
